@@ -1,0 +1,30 @@
+{
+    "name"       : "larangular/config-writer",
+    "description": "config-writer",
+    "license"    : "MIT",
+    "authors"    : [
+        {
+            "name" : "Simon Diaz",
+            "email": "sdiaz.sz@gmail.com"
+        }
+    ],
+    "require"    : {
+        "php"              : ">=7.1",
+        "laravel/framework": "~5.8.0|^6.0|^7.0|^8.0"
+    },
+    "autoload"   : {
+        "psr-4": {
+            "Larangular\\ConfigWriter\\": "./src"
+        }
+    },
+    "extra"      : {
+        "laravel": {
+            "providers": [
+                "Larangular\\ConfigWriter\\ConfigWriterServiceProvider"
+            ],
+            "aliases"  : {
+                "ConfigWriter": "Larangular\\ConfigWriter\\Facades\\ConfigWriter"
+            }
+        }
+    }
+}
