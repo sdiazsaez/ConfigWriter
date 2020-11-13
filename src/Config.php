@@ -19,7 +19,7 @@ class Config extends Repository {
      * Create a new config file in the default configuration directory.
      *
      * @param string $filename Filename of the config file to be created.
-     * @param array $data Array of data to be saved in the config file.
+     * @param array  $data     Array of data to be saved in the config file.
      */
     public function create(string $filename, array $data): void {
         $configFile = fopen(config_path() . "/$filename.php", 'w');
@@ -29,8 +29,8 @@ class Config extends Repository {
     /**
      * Save a configuration parameter to an existing config file.
      *
-     * @param string $key Dont notation key of the setting to be saved.
-     * @param mixed $value Data to be set for the selected key.
+     * @param string $key   Dont notation key of the setting to be saved.
+     * @param mixed  $value Data to be set for the selected key.
      */
     public function save(string $key, $value): void {
         $filename = explode('.', $key)[0];
@@ -49,8 +49,9 @@ class Config extends Repository {
     /**
      * Process and format data to be saved to the config file.
      *
-     * @param array $data Array of data to be processed and formatted.
-     * @param int $indentation Tab indentations count to be prefixed for the saved data.
+     * @param array $data        Array of data to be processed and formatted.
+     * @param int   $indentation Tab indentations count to be prefixed for the saved data.
+     *
      * @return string Data stringified and processed to be saved.
      */
     private function process(array $data, int $indentation = 0): string {
